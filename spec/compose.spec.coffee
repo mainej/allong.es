@@ -29,3 +29,6 @@ describe "compose", ->
 
       expect(compose(collect, increment)(1, 2, 3)).toEqual([2, 2, 3])
 
+  describe "of three or more functions", ->
+    it "composes them", ->
+      expect(compose(increment, increment, increment)(0)).toEqual(3)
